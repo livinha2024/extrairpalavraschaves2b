@@ -30,3 +30,26 @@ function processaTexto(texto) {
 
     
 }
+
+function contaFrequencia(palavras) {
+    let frequencias = {};
+    for (let i of palavras) {
+        frequencias[i]=0;
+        for (let j of palavras) {
+            if (i == j) {
+                frequencias[i]++;
+            }
+        }
+    }
+    return frequencias;
+}
+
+function tiraPalavrasRuins(palavra) {
+    const palavrasBoas = [];
+    for (let palavras of palavras) {
+        if (!PALAVRAS_RUINS.has(palavra) && palavra.length >2) {
+            palavrasBoas.push(palavra);
+        }
+    }
+    return palavrasBoas;
+}
